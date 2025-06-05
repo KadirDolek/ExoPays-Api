@@ -1,0 +1,49 @@
+#header{
+    background-color: rgb(255, 255, 255);
+    border-bottom: 2px rgba(128, 128, 128, 0.233) solid;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 22.5px;
+}
+
+#darkmode{
+    border: none;
+    background: transparent;
+    font-size: 12.5px;
+    cursor: pointer;
+}
+#gestion{
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0 50px 0;
+}
+#pays{
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    width: auto;
+    
+}
+#image{
+    height: 250px;
+    width: 400px;
+    border-bottom: 0.5px solid black;
+}
+#leMap{
+      display: flex;
+      flex-direction: column;
+      border: 2px solid black;
+      margin-bottom: 5%;
+}
+#pays{
+    display: flex;
+    justify-content: center;
+    gap: 2.5%;
+}
+
+#leMap p{
+    margin-left: 5%;
+}
