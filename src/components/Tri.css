@@ -4,3 +4,16 @@
 .dropdown-item{
     font-weight: 500;
 }
+
+#tri{
+    width: 200px;
+    position: relative;
+    transform: translateX(-30px);
+}
+@media (max-width:715px){
+    #tri{
+    width: 200px;
+    position: relative;
+    transform: translateX(170px);
+}
+}

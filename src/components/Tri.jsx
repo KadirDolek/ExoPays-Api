@@ -8,6 +8,7 @@ export default function Tri(){
     return(
 
         <>
+        <div id='tri'>
             <p className="nav-item dropdown">
                 <a
                     className="nav-link dropdown-toggle"
@@ -48,6 +49,8 @@ export default function Tri(){
                     </li>
                 </ul>
             </p>
+        </div>
+            
 
         </>
     )
