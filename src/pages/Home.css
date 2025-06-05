@@ -9,7 +9,10 @@
     padding-right: 2.5%;
     margin-top: 1%;
 }
-
+.carte-link{
+    text-decoration: none;
+    color: black;
+}
 #darkmode{
     border: none;
     background: transparent;
@@ -18,6 +21,7 @@
     margin-top: -1%;
 }
 #gestion{
+    align-items: center;
     padding-left: 2.5%;
     padding-right: 3%;
     display: flex;
@@ -25,6 +29,9 @@
     margin: 0 0 50px 0;
     padding-top: 2.5%;
     flex-wrap: wrap;
+}
+#Tri{
+    display: flex;
 }
 @media (max-width:715px){
     #gestion{
@@ -67,4 +74,46 @@
 }
 #bg{
     background-color: rgb(250, 250, 250)
+}
+#acceuil-btn {
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #e0ffe0;
+    border: 1px solid #5cb85c;
+    color: #2b662b;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#acceuil-btn:hover {
+    background-color: #8bd8ac;
+}
+#bloc-txt{
+    height: 100px;
+    align-items: center;
+    display: flex;
+}
+#btn-voir-fav:hover{
+    background-color: #8bd8ac;
+}
+#btn-voir-fav{
+    transition: 0.3s ease;
+    margin-top: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #e0ffe0;
+    border: 1px solid #5cb85c;
+    color: #2b662b;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+#Tri{
+    flex-direction: column;
 }

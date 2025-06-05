@@ -8,12 +8,12 @@
 #tri{
     width: 200px;
     position: relative;
-    transform: translateX(-30px);
+    transform: translateX(-0px);
 }
 @media (max-width:715px){
     #tri{
-    width: 200px;
     position: relative;
-    transform: translateX(170px);
+    transform: translateX(-0px);
+    width: 130px;
 }
 }
