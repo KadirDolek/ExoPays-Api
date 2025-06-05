@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import PaysDetails from './components/PaysDetails/PaysDetails';
-
+import Favoris from './pages/Favoris/Favoris'
 
 
 
@@ -26,6 +26,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home data={data}/>}></Route>
       <Route path="/pays/:countryCode" element={<PaysDetails />} />
+      <Route path="/favoris" element={<Favoris />} />
     </Routes>
 
     </>

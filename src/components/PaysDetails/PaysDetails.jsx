@@ -5,9 +5,10 @@ import axios from 'axios';
 
 
 export default function PaysDetails() {
-  const { countryCode } = useParams();
-  const [country, setCountry] = useState(null);
-  const navigate = useNavigate();
+    const { countryCode } = useParams();
+    const [country, setCountry] = useState(null);
+    const navigate = useNavigate();
+    const [message, setMessage] = useState('');
 
   useEffect(() => {
     axios.get('https://restcountries.com/v3.1/all')
@@ -36,7 +37,31 @@ export default function PaysDetails() {
           <img src={country.flags.svg} alt={`Drapeau de ${country.name.common}`} />
           <h2>{country.name.common}</h2>
           <h4>{country.name.official}</h4>
-          <button>Ajouter aux favoris</button>
+          <button className="back-button" onClick={() => navigate('/')}> Retour </button>
+          {/* le bouton favoris */}
+          
+            <button
+                className="favoris"
+                onClick={() => {
+                    const favoris = JSON.parse(localStorage.getItem('favoris')) || [];
+
+                    const existe = favoris.some(f => f.cca3 === country.cca3);
+                    if (!existe) {
+                    favoris.push(country); 
+                    localStorage.setItem('favoris', JSON.stringify(favoris));
+                    setMessage(`${country.name.common} ajouté aux favoris !`);
+                    } else {
+                    setMessage(`${country.name.common} est déjà dans les favoris.`);
+                    }
+
+                    // Efface le message après 3 secondes :
+                    setTimeout(() => setMessage(''), 3000);
+                }}
+                >
+                Ajouter aux favoris
+                </button>
+                {message && <p className="notif">{message}</p>}
+        
         </div>
 
         <div className="right-column">
@@ -66,7 +91,7 @@ export default function PaysDetails() {
             <span>
               {country.borders ? (
                 country.borders.map(border => (
-                  <button
+                  <button className='frontaliers-btn'
                     key={border}
                     onClick={() => navigate(`/pays/${border.toLowerCase()}`)}
                   >

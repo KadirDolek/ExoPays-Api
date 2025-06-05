@@ -20,6 +20,7 @@ export default function Home({ data }) {
             <div id="Searchbar">
               <Searchbar />
             </div>
+            <button id="voir-fav-btn" onClick={() => navigate('/favoris')}>Voir les favoris</button>
             <div id="Tri">(tri ici)</div>
           </div>
           <div id="pays">
@@ -28,8 +29,8 @@ export default function Home({ data }) {
                 <div
                   id="leMap"
                   key={index}
-                  onClick={() => navigate(`/pays/${element.cca3.toLowerCase()}`)} // 🔥 Navigue vers la page
-                  style={{ cursor: "pointer" }} // Pour montrer que c’est cliquable
+                  onClick={() => navigate(`/pays/${element.cca3.toLowerCase()}`)}
+                  style={{ cursor: "pointer" }} 
                 >
                   <img
                     id="image"
