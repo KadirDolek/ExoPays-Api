@@ -30,6 +30,14 @@
     padding-top: 2.5%;
     flex-wrap: wrap;
 }
+#Tri{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    width: 100%;
+}
 @media (max-width:715px){
     #gestion{
         display: flex;
@@ -110,7 +118,6 @@
     margin-bottom: 10px;
 }
 #Tri{
-    display: flex;
-    align-items: center;
-    gap: 60px;
+    flex-direction: column;
+    gap: 0px;
 }
