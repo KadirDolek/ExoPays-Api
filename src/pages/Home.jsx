@@ -34,7 +34,7 @@ const listeFiltre = data
                 <div id="leMap" key={index}>
                   <img
                     id="image"
-                    src={element.flags.png}
+                    src={element.flags.svg}
                     alt={`${element.name.official}`}
                   />
                   <p>
