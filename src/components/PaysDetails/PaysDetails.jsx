@@ -4,24 +4,25 @@ import './PaysDetails.css';
 import axios from 'axios';
 
 
-export default function PaysDetails() {
-    const { countryCode } = useParams();
-    const [country, setCountry] = useState(null);
-    const navigate = useNavigate();
-    const [message, setMessage] = useState('');
+export default function PaysDetails({ data }) {
+  const { countryCode } = useParams();
+  const [country, setCountry] = useState(null);
+  const navigate = useNavigate();
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
-    axios.get('https://restcountries.com/v3.1/all')
-      .then(response => {
-        const found = response.data.find(
-          c => c.cca3.toLowerCase() === countryCode.toLowerCase()
-        );
-        setCountry(found);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }, [countryCode]);
+    if (data && data.length > 0) {
+      console.log("Recherche du pays dans les données existantes...");
+      const found = data.find(
+        c => c.cca3.toLowerCase() === countryCode.toLowerCase()
+      );
+      setCountry(found);
+      
+      if (!found) {
+        console.log("Pays non trouvé:", countryCode);
+      }
+    }
+  }, [countryCode, data]);
 
   if (!country) return <p>Chargement...</p>;
 
