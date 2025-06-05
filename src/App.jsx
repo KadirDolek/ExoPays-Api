@@ -4,6 +4,8 @@ import Home from './pages/Home'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import Layout from './Layout/Layout'
+
 
 
 
@@ -22,7 +24,9 @@ function App() {
   return (
     <>
     <Routes>
-      <Route path="/" element={<Home data={data}/>}></Route>
+      <Route path='/' element={<Layout/>}>
+          <Route index element={<Home data={data}/>}/>
+      </Route>
     </Routes>
       
     </>

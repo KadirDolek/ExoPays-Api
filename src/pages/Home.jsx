@@ -19,12 +19,6 @@ const listeFiltre = data
   return (
     <>
       <div>
-        <div id="header">
-          <p>Where in the world?</p>
-          <button id="darkmode">
-            <strong>&#127769;&nbsp;&nbsp;Dark Mode</strong>
-          </button>
-        </div>
         <div id="bg">
           <div id="gestion">
             <div id="Searchbar">

@@ -2,14 +2,14 @@ import './Tri.css'
 
 export default function Tri({ regionFiltre, setRegionFiltre }) {
     
-    const handleRegionClick = (region) => {
+    const handleClick = (region) => {
         setRegionFiltre(region === regionFiltre ? "" : region);
     };
 
     return (
         <>
         <div id='tri'>
-            <p className="nav-item dropdown">
+            <span className="nav-item dropdown">
                 <a
                     className="nav-link dropdown-toggle"
                     href="#"
@@ -26,7 +26,7 @@ export default function Tri({ regionFiltre, setRegionFiltre }) {
                             href="#"
                             onClick={(e) => {
                                 e.preventDefault();
-                                handleRegionClick("Africa");
+                                handleClick("Africa");
                             }}
                         >
                             Africa
@@ -38,7 +38,7 @@ export default function Tri({ regionFiltre, setRegionFiltre }) {
                             href="#"
                             onClick={(e) => {
                                 e.preventDefault();
-                                handleRegionClick("Americas");
+                                handleClick("Americas");
                             }}
                         >
                             America
@@ -50,7 +50,7 @@ export default function Tri({ regionFiltre, setRegionFiltre }) {
                             href="#"
                             onClick={(e) => {
                                 e.preventDefault();
-                                handleRegionClick("Asia");
+                                handleClick("Asia");
                             }}
                         >
                             Asia
@@ -62,7 +62,7 @@ export default function Tri({ regionFiltre, setRegionFiltre }) {
                             href="#"
                             onClick={(e) => {
                                 e.preventDefault();
-                                handleRegionClick("Europe");
+                                handleClick("Europe");
                             }}
                         >
                             Europe
@@ -74,7 +74,7 @@ export default function Tri({ regionFiltre, setRegionFiltre }) {
                             href="#"
                             onClick={(e) => {
                                 e.preventDefault();
-                                handleRegionClick("Oceania");
+                                handleClick("Oceania");
                             }}
                         >
                             Oceania
@@ -93,7 +93,7 @@ export default function Tri({ regionFiltre, setRegionFiltre }) {
                         </a>
                     </li>
                 </ul>
-            </p>
+            </span>
         </div>
         </>
     )
