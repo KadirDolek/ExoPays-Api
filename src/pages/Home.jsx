@@ -3,7 +3,7 @@ import Searchbar from "../components/Searchbar";
 import Tri from "../components/Tri";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
-
+// petit test
 
 export default function Home({ data }) {
   const [recherche, setRecherche] = useState("");
