@@ -5,6 +5,8 @@
     justify-content: space-between;
     font-weight: bold;
     font-size: 22.5px;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
 }
 
 #darkmode{
@@ -18,7 +20,9 @@
     padding-right: 2.5%;
     display: flex;
     justify-content: space-between;
-    margin: 50px 0 50px 0;
+    margin: 0 0 50px 0;
+    padding-top: 2.5%;
+    flex-wrap: wrap;
 }
 #pays{
     display: flex;
@@ -40,6 +44,7 @@
       border: 2px solid black;
       margin-bottom: 5%;
       border-radius: 10px;
+      width: 400px;
 }
 #pays{
     display: flex;

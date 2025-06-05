@@ -1,7 +1,17 @@
 import "./Home.css";
 import Searchbar from "../components/Searchbar";
+import Tri from "../components/Tri";
+import { useState } from "react";
+
 
 export default function Home({ data }) {
+  const [recherche, setRecherche] = useState("");
+
+  const listeFiltre = data
+    ? data.filter((pays) =>
+        pays.name.official.toLowerCase().includes(recherche.toLowerCase())
+      ):[];
+
   return (
     <>
       <div>
@@ -14,18 +24,20 @@ export default function Home({ data }) {
         <div id="bg">
           <div id="gestion">
             <div id="Searchbar">
-              <Searchbar />
+              <Searchbar recherche={recherche} setRecherche={setRecherche} />
             </div>
-            <div id="Tri">(tri ici)</div>
+            <div id="Tri">
+              <Tri data={data} />
+            </div>
           </div>
           <div id="pays">
             {data ? (
-              data.map((element, index) => (
+              listeFiltre.map((element, index) => (
                 <div id="leMap" key={index}>
                   <img
                     id="image"
                     src={element.flags.png}
-                    alt={`Flag of ${element.name.official}`}
+                    alt={`${element.name.official}`}
                   />
                   <p>
                     <strong>{element.name.official}</strong>

@@ -17,8 +17,6 @@ function App() {
             axios.get(`https://restcountries.com/v3.1/all`) 
               .then((response) => setData(response.data))
               .catch((error) => console.log(error));
-
-
         }, []);
 
   return (
