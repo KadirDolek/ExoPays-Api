@@ -7,7 +7,7 @@ export default function Searchbar({ recherche, setRecherche }) {
       type="text"
       value={recherche}
       onChange={(e) => setRecherche(e.target.value)}
-      placeholder="&#128269; Recherchez un pays..."
+      placeholder="&#128269;&nbsp; Recherchez un pays..."
     />
   );
 }
