@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './PaysDetails.css';
-import axios from 'axios';
+
 
 
 export default function PaysDetails({ data }) {
