@@ -14,6 +14,7 @@
     #tri{
     width: 200px;
     position: relative;
-    transform: translateX(170px);
+    transform: translateX(0px);
+    width: 100px;
 }
 }
