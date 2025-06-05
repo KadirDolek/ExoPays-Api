@@ -25,12 +25,12 @@ const listeFiltre = data
             <div id="Searchbar">
               <Searchbar recherche={recherche} setRecherche={setRecherche} />
             </div>
-            <div id="btn-favoris">
-            <Link to="/favoris">
-              <button>Voir les favoris</button>
-            </Link>
+            <div>
             </div>
             <div id="Tri">
+            <Link to="/favoris">
+              <button id="btn-voir-fav">Voir les favoris</button>
+            </Link>
               <Tri data={data} regionFiltre={regionFiltre} setRegionFiltre={setRegionFiltre} />
             </div>
           </div>
