@@ -1,12 +1,12 @@
 import './Tri.css'
 
+export default function Tri({ regionFiltre, setRegionFiltre }) {
+    
+    const handleRegionClick = (region) => {
+        setRegionFiltre(region === regionFiltre ? "" : region);
+    };
 
-export default function Tri(){
-
-
-
-    return(
-
+    return (
         <>
         <div id='tri'>
             <p className="nav-item dropdown">
@@ -17,41 +17,84 @@ export default function Tri(){
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                 >
-                    Filter By Region
+                    {regionFiltre || "Filter By Region"}
                 </a>
                 <ul className="dropdown-menu">
                     <li>
-                    <a className="dropdown-item" href="#">
-                        Africa
-                    </a>
+                        <a 
+                            className="dropdown-item" 
+                            href="#"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleRegionClick("Africa");
+                            }}
+                        >
+                            Africa
+                        </a>
                     </li>
                     <li>
-                    <a className="dropdown-item" href="#">
-                        America
-                    </a>
+                        <a 
+                            className="dropdown-item" 
+                            href="#"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleRegionClick("Americas");
+                            }}
+                        >
+                            America
+                        </a>
                     </li>
                     <li>
+                        <a 
+                            className="dropdown-item" 
+                            href="#"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleRegionClick("Asia");
+                            }}
+                        >
+                            Asia
+                        </a>
                     </li>
                     <li>
-                    <a className="dropdown-item" href="#">
-                        Asia
-                    </a>
+                        <a 
+                            className="dropdown-item" 
+                            href="#"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleRegionClick("Europe");
+                            }}
+                        >
+                            Europe
+                        </a>
                     </li>
                     <li>
-                    <a className="dropdown-item" href="#">
-                        Europe
-                    </a>
+                        <a 
+                            className="dropdown-item" 
+                            href="#"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleRegionClick("Oceania");
+                            }}
+                        >
+                            Oceania
+                        </a>
                     </li>
                     <li>
-                    <a className="dropdown-item" href="#">
-                        Oceania
-                    </a>
+                        <a 
+                            className="dropdown-item" 
+                            href="#"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                setRegionFiltre("");
+                            }}
+                        >
+                            All Regions
+                        </a>
                     </li>
                 </ul>
             </p>
         </div>
-            
-
         </>
     )
 }

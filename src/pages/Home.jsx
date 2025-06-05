@@ -6,11 +6,15 @@ import { useState } from "react";
 
 export default function Home({ data }) {
   const [recherche, setRecherche] = useState("");
+  const [regionFiltre, setRegionFiltre] = useState("");
 
-  const listeFiltre = data
-    ? data.filter((pays) =>
-        pays.name.official.toLowerCase().includes(recherche.toLowerCase())
-      ):[];
+const listeFiltre = data
+  ? data.filter((pays) => {
+      const matchRecherche = pays.name.official.toLowerCase().includes(recherche.toLowerCase());
+      const matchRegion = regionFiltre === "" || pays.region === regionFiltre;
+      return matchRecherche && matchRegion;
+    })
+  : [];
 
   return (
     <>
@@ -27,7 +31,7 @@ export default function Home({ data }) {
               <Searchbar recherche={recherche} setRecherche={setRecherche} />
             </div>
             <div id="Tri">
-              <Tri data={data} />
+              <Tri data={data} regionFiltre={regionFiltre} setRegionFiltre={setRegionFiltre} />
             </div>
           </div>
           <div id="pays">

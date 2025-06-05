@@ -16,8 +16,8 @@
     cursor: pointer;
 }
 #gestion{
-    /* padding-left: 2.5%;
-    padding-right: 2.5%; */
+    padding-left: 2.5%;
+    padding-right: 3%;
     display: flex;
     justify-content: space-between;
     margin: 0 0 50px 0;
