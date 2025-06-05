@@ -4,7 +4,9 @@ import Home from './pages/Home'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import PaysDetails from './components/PaysDetails/PaysDetails';
+import Layout from './Layout/Layout'
+
+
 
 
 
@@ -17,15 +19,14 @@ function App() {
             axios.get("https://restcountries.com/v3.1/all") 
               .then((response) => setData(response.data))
               .catch((error) => console.log(error));
-
-
         }, []);
 
   return (
     <>
     <Routes>
-      <Route path="/" element={<Home data={data}/>}></Route>
-      <Route path="/pays/:countryCode" element={<PaysDetails />} />
+      <Route path='/' element={<Layout/>}>
+          <Route index element={<Home data={data}/>}/>
+      </Route>
     </Routes>
 
     </>

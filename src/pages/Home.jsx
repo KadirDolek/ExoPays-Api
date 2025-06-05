@@ -1,45 +1,54 @@
 import "./Home.css";
 import Searchbar from "../components/Searchbar";
-import { useNavigate } from "react-router-dom";
+import Tri from "../components/Tri";
+import { useState } from "react";
+
 
 export default function Home({ data }) {
-  
-  const navigate = useNavigate();
+  const [recherche, setRecherche] = useState("");
+  const [regionFiltre, setRegionFiltre] = useState("");
+
+const listeFiltre = data
+  ? data.filter((pays) => {
+      const matchRecherche = pays.name.official.toLowerCase().includes(recherche.toLowerCase());
+      const matchRegion = regionFiltre === "" || pays.region === regionFiltre;
+      return matchRecherche && matchRegion;
+    })
+  : [];
 
   return (
     <>
       <div>
-        <div id="header">
-          <p>Where in the world?</p>
-          <button id="darkmode">
-            <strong>&#127769;&nbsp;&nbsp;Dark Mode</strong>
-          </button>
-        </div>
         <div id="bg">
           <div id="gestion">
             <div id="Searchbar">
-              <Searchbar />
+              <Searchbar recherche={recherche} setRecherche={setRecherche} />
             </div>
-            <div id="Tri">(tri ici)</div>
+            <div id="Tri">
+              <Tri data={data} regionFiltre={regionFiltre} setRegionFiltre={setRegionFiltre} />
+            </div>
           </div>
           <div id="pays">
             {data ? (
-              data.map((element, index) => (
-                <div
-                  id="leMap"
-                  key={index}
-                  onClick={() => navigate(`/pays/${element.cca3.toLowerCase()}`)} // 🔥 Navigue vers la page
-                  style={{ cursor: "pointer" }} // Pour montrer que c’est cliquable
-                >
+              listeFiltre.map((element, index) => (
+                <div id="leMap" key={index}>
                   <img
                     id="image"
                     src={element.flags.png}
-                    alt={`Flag of ${element.name.official}`}
-                />
-                  <p><strong>{element.name.official}</strong></p>
-                  <p><strong>Population:</strong>&nbsp;{element.population}</p>
-                  <p><strong>Region:</strong>&nbsp;{element.region}</p>
-                  <p><strong>Capital:</strong> &nbsp;{element.capital}</p>
+                    alt={`${element.name.official}`}
+                  />
+                  <p>
+                    <strong>{element.name.official}</strong>
+                  </p>
+                  <p>
+                    <strong>Population:</strong>&nbsp;{element.population.toLocaleString("en-EN")}
+                  </p>
+                  <p>
+                    <strong>Region:</strong>&nbsp;{element.region}
+                  </p>
+                  <p>
+                    <strong>Capital:</strong> &nbsp;{element.capital}
+                  </p>
                 </div>
               ))
             ) : (
