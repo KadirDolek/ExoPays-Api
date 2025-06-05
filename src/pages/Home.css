@@ -32,11 +32,6 @@
 }
 #Tri{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
-    width: 100%;
 }
 @media (max-width:715px){
     #gestion{
@@ -119,5 +114,4 @@
 }
 #Tri{
     flex-direction: column;
-    gap: 0px;
 }
