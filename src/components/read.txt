@@ -1,0 +1,17 @@
+.pays-details {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  height: 100vh;
+  background-color: rgb(33, 46, 55);
+}
+
+.pays-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  max-width: 1000px;
+  width: 100%;
+}
