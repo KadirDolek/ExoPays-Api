@@ -1,7 +1,11 @@
 import "./Home.css";
 import Searchbar from "../components/Searchbar";
+import { useNavigate } from "react-router-dom";
 
 export default function Home({ data }) {
+  
+  const navigate = useNavigate();
+
   return (
     <>
       <div>
@@ -21,24 +25,21 @@ export default function Home({ data }) {
           <div id="pays">
             {data ? (
               data.map((element, index) => (
-                <div id="leMap" key={index}>
+                <div
+                  id="leMap"
+                  key={index}
+                  onClick={() => navigate(`/pays/${element.cca3.toLowerCase()}`)} // 🔥 Navigue vers la page
+                  style={{ cursor: "pointer" }} // Pour montrer que c’est cliquable
+                >
                   <img
                     id="image"
                     src={element.flags.png}
                     alt={`Flag of ${element.name.official}`}
-                  />
-                  <p>
-                    <strong>{element.name.official}</strong>
-                  </p>
-                  <p>
-                    <strong>Population:</strong>&nbsp;{element.population}
-                  </p>
-                  <p>
-                    <strong>Region:</strong>&nbsp;{element.region}
-                  </p>
-                  <p>
-                    <strong>Capital:</strong> &nbsp;{element.capital}
-                  </p>
+                />
+                  <p><strong>{element.name.official}</strong></p>
+                  <p><strong>Population:</strong>&nbsp;{element.population}</p>
+                  <p><strong>Region:</strong>&nbsp;{element.region}</p>
+                  <p><strong>Capital:</strong> &nbsp;{element.capital}</p>
                 </div>
               ))
             ) : (

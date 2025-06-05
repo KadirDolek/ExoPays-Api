@@ -5,7 +5,7 @@
   align-items: center;
   padding: 2rem;
   height: 100vh;
-  background-color: rgb(33, 46, 55);
+  background-color: white;
 }
 
 .pays-wrapper {
@@ -29,7 +29,7 @@
 }
 
 .right-column {
-  color: white;
+  color: black;
   flex: 0 1 500px;
 }
 
@@ -70,7 +70,7 @@ button {
     align-items: center;
     padding: 2rem;
     height: 100%;
-    background-color: rgb(33, 46, 55);
+    background-color: white;;
     }
 
     .pays-wrapper {
@@ -97,7 +97,7 @@ button {
     align-items: center;
     padding: 2rem;
     height: 100%;
-    background-color: rgb(33, 46, 55);
+    background-color: white;;
     }
 
     .pays-wrapper {

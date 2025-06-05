@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import './PaysDetails.css';
 import axios from 'axios';
 
+
 export default function PaysDetails() {
   const { countryCode } = useParams();
   const [country, setCountry] = useState(null);
