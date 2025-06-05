@@ -41,7 +41,7 @@ const listeFiltre = data
                     <strong>{element.name.official}</strong>
                   </p>
                   <p>
-                    <strong>Population:</strong>&nbsp;{element.population}
+                    <strong>Population:</strong>&nbsp;{element.population.toLocaleString("en-EN")}
                   </p>
                   <p>
                     <strong>Region:</strong>&nbsp;{element.region}
