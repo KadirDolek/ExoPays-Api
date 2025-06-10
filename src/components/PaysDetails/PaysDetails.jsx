@@ -1,17 +1,17 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './PaysDetails.css';
+import axios from 'axios';
 
 
-
-export default function PaysDetails({ data }) {
-  const { countryCode } = useParams();
-  const [country, setCountry] = useState(null);
-  const navigate = useNavigate();
-  const [message, setMessage] = useState('');
+export default function PaysDetails() {
+    const { countryCode } = useParams();
+    const [country, setCountry] = useState(null);
+    const navigate = useNavigate();
+    const [message, setMessage] = useState('');
 
   useEffect(() => {
-    axios.get('https://restcountries.com/v3.1/all?fields=name,cca3,flags,population,region,subregion,capital,currencies,languages,borders')
+    axios.get('https://restcountries.com/v3.1/all')
       .then(response => {
         const found = response.data.find(
           c => c.cca3.toLowerCase() === countryCode.toLowerCase()
