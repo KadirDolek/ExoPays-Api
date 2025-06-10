@@ -47,11 +47,13 @@
     
 }
 #image{
-    height: 250px;
+    height: 225px;
     width: 374px;
     border-bottom: 0.5px solid black;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
+    object-fit: cover;
+    margin-bottom: 2.5%;
 }
 #leMap{
       display: flex;
