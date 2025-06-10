@@ -11,7 +11,7 @@ export default function PaysDetails() {
     const [message, setMessage] = useState('');
 
   useEffect(() => {
-    axios.get('https://restcountries.com/v3.1/all')
+    axios.get('https://restcountries.com/v3.1/all?fields=name,cca3,flags,population,region,subregion,capital,currencies,languages,borders')
       .then(response => {
         const found = response.data.find(
           c => c.cca3.toLowerCase() === countryCode.toLowerCase()

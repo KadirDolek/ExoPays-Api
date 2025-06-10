@@ -17,7 +17,7 @@ function App() {
       const [data, setData] = useState(null);
 
       useEffect(() => {
-            axios.get("https://restcountries.com/v3.1/all") 
+            axios.get("https://restcountries.com/v3.1/all?fields=name,cca3,flags,population,region,subregion,capital,currencies,languages,borders") 
               .then((response) => setData(response.data))
               .catch((error) => console.log(error));
         }, []);
